@@ -4,8 +4,8 @@ import { MineMessageParams, Queries } from '../wrappers/NftGiver';
 import { toNano } from '@ton/ton';
 import { NetworkProvider } from '@ton/blueprint';
 
-const walletAddress = Address.parse('UQBcXAeODfe8hh4YB1M3DdaQLe9PY7gm7_TIVFkSw4GZKNRo');
-const collectionAddress = Address.parse('EQDk8N7xM5D669LC2YACrseBJtDyFqwtSPCNhRWXU7kjEptX');
+const walletAddress = Address.parse('wallet address here');
+const collectionAddress = Address.parse('EQDk8N7xM5D669LC2YACrseBJtDyFqwtSPCNhRWXU7kjEptX'); //mainnet address
 
 async function mine () {
 
@@ -14,8 +14,6 @@ async function mine () {
     // initialize ton library
     const client = new TonClient({ endpoint });
     const miningData = await client.runMethod(collectionAddress, 'get_mining_data');
-
-    // ... previous code
 
     const { stack } = miningData;
 
@@ -26,9 +24,6 @@ async function mine () {
     const minCpl = stack.readBigNumber();
     const maxCpl = stack.readBigNumber();
 
-
-
-    // ... previous code
 
     const mineParams: MineMessageParams = {
         expire: unixNow() + 300, // 5 min is enough to make a transaction
@@ -62,10 +57,8 @@ async function mine () {
     console.log('msg_hash < pow_complexity: ', bufferToBigint(msg.hash()) < complexity);
 
     return msg;
-
 }
     
-
 export async function run(provider: NetworkProvider) {
     // Do not forget to return `msg` from `mine()` function
     const msg = await mine();
