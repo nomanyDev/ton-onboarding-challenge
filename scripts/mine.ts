@@ -4,8 +4,8 @@ import { MineMessageParams, Queries } from '../wrappers/NftGiver';
 import { toNano } from '@ton/ton';
 import { NetworkProvider } from '@ton/blueprint';
 
-const walletAddress = Address.parse('wallet address here');
-const collectionAddress = Address.parse('EQDk8N7xM5D669LC2YACrseBJtDyFqwtSPCNhRWXU7kjEptX'); //mainnet address
+const walletAddress = Address.parse('UQBcXAeODfe8hh4YB1M3DdaQLe9PY7gm7_TIVFkSw4GZKNRo');
+const collectionAddress = Address.parse('EQDk8N7xM5D669LC2YACrseBJtDyFqwtSPCNhRWXU7kjEptX');
 
 async function mine () {
 
